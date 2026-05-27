@@ -2249,3 +2249,70 @@ html, body {
         height: auto;
     }
 }
+/* ============================================
+   18. НИЖНЕЕ ЗАКРЕПЛЁННОЕ МЕНЮ (МОБИЛЬНАЯ ВЕРСИЯ)
+   ============================================ */
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 8px 8px;
+    display: none;
+}
+
+.bottom-menu__wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 47px;
+    justify-content: flex-start;
+    align-items: center;
+    scrollbar-width: none;  /* Firefox — убираем полосу */
+    padding-bottom: 8px;
+}
+
+.bottom-menu__wrapper::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Edge — убираем полосу */
+}
+
+.bottom-menu__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.bottom-menu__icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.bottom-menu__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+    text-align: center;
+}
+
+.bottom-menu__item:hover .bottom-menu__label {
+    color: #00579F;
+}
+
+/* Показываем только на мобилках */
+@media (max-width: 768px) {
+    .bottom-menu {
+        display: block;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+}

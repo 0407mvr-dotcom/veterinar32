@@ -22,8 +22,10 @@ body.menu-open {
    ============================================ */
 .bg-fixed {
     position: absolute;
+    top: -75px;
     left: 0;
     width: 100%;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -36,8 +38,6 @@ body.menu-open {
         top: -75px;
         height: 100vh;
         background-image: url('images/bg-mobile.png');
-        background-size: cover;
-        background-position: center;
     }
 }
 
@@ -47,8 +47,6 @@ body.menu-open {
         top: -80px;
         height: 110vh;
         background-image: url('images/bg-desktop.png');
-        background-size: cover;
-        background-position: center;
     }
 }
 
@@ -58,8 +56,6 @@ body.menu-open {
         top: -100px;
         height: 140vh;
         background-image: url('images/bg-desktop.png');
-        background-size: cover;
-        background-position: center;
     }
 }
 
@@ -69,8 +65,6 @@ body.menu-open {
         top: -100px;
         height: 110vh;
         background-image: url('images/bg-desktop.png');
-        background-size: cover;
-        background-position: center;
     }
 }
 
@@ -90,7 +84,7 @@ body.menu-open {
         z-index: 1000;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(5px);
-        padding: 12px 20px;
+        padding: 14px 20px;
     }
     
     .mobile-header__wrapper {
@@ -125,8 +119,8 @@ body.menu-open {
     }
     
     .mobile-logo img {
-        width: 104px;
-        height: 41px;
+        width: 94px;
+        height: 35px;
         margin-top: 0;
         object-fit: contain;
     }
@@ -1129,13 +1123,13 @@ body.menu-open {
         flex: 0 0 155px;
         max-width: 155px;
         height: auto;
-        min-height: 280px;
+        min-height: 330px;
         scroll-snap-align: start;
         margin-bottom: 5px;
     }
 
     .product-card__image {
-        height: 130px;
+        height: 170px;
     }
 
     .product-card__price {
@@ -1609,7 +1603,7 @@ body.menu-open {
         gap: 16px;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         padding-bottom: 8px;
     }
 
@@ -1678,7 +1672,7 @@ body.menu-open {
     }
 
     .advantages-video iframe {
-        height: 200px;
+        height: 173px;
     }
 }
 /* ============================================
@@ -2208,12 +2202,6 @@ body.menu-open {
         gap: 0;
     }
 }
-/* ===== СКРЫВАЕМ АККОРДЕОН НА ПК И ПЛАНШЕТАХ ===== */
-@media (min-width: 769px) {
-    .footer__accordion-wrapper {
-        display: none !important;
-    }
-}
 /* ============================================
    11. ОТСТУПЫ МЕЖДУ БЛОКАМИ
    ============================================ */
@@ -2224,4 +2212,40 @@ body.menu-open {
 .catalog-section {
     margin-top: 60px;
     margin-bottom: 40px;
+}
+/* ===== ЗАПРЕЩАЕМ СЖАТИЕ ВЫШЕ 735px ===== */
+html, body {
+    min-height: 735px;
+    height: auto;
+}
+
+@media (max-height: 735px) {
+    body {
+        min-height: 735px;
+        overflow-y: auto;
+    }
+}
+/* ===== ЗАПРЕЩАЕМ СЖАТИЕ ТОЛЬКО НА МОБИЛКЕ ===== */
+@media (max-width: 768px) {
+    html, body {
+        min-height: 735px;
+        height: auto;
+    }
+
+    .bg-fixed {
+        min-height: 735px;
+        height: auto;
+    }
+}
+/* ===== ЗАПРЕЩАЕМ СЖАТИЕ ДЛЯ ПК И НОУТБУКОВ (от 769px до 1900px) ===== */
+@media (min-width: 769px) and (max-width: 1900px) {
+    html, body {
+        min-height: 935px;
+        height: auto;
+    }
+
+    .bg-fixed {
+        min-height: 1035px;
+        height: auto;
+    }
 }
